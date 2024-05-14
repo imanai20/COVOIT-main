@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'équipe de développement</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5dc; /* Fond beige */
+            padding: 20px;
+        }
+
+        /* Conteneur principal */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Titre */
+        .contact-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Conteneur des photos */
+        .contact-photos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Styles pour les images */
+        .contact-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            transition: transform 0.3s ease;
+        }
+
+        /* Effet de survol sur les images */
+        .contact-image:hover {
+            transform: scale(1.1);
+        }
+
+        /* Styles pour le formulaire */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        #successMessage {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main class="contact-container">
+        <h1>L'équipe de développement</h1>
+        <br>
+        <div class="contact-photos">
+            <a href="https://www.linkedin.com/in/abder-bess/">
+                <img src="https://media.licdn.com/dms/image/D4E35AQETrKt3vIS7YQ/profile-framedphoto-shrink_800_800/0/1711068674736?e=1713747600&v=beta&t=hKIbcmAg7TnZohwU39HU0HgFupLV4mZ1EPo7wXC-V3Q" alt="Abder Bess" class="contact-image">
+            </a>
+            <a href="https://www.linkedin.com/in/rayan-toumert/">
+                <img src="https://media.licdn.com/dms/image/D4E35AQHS_CWSK4FaJA/profile-framedphoto-shrink_800_800/0/1707215678462?e=1713747600&v=beta&t=ya2hKWYebRFDvO6e5QGsTivnivW_BBjzLV-OxebCnK4" alt="Rayan Toumert" class="contact-image">
+            </a>
+            <a href="https://www.linkedin.com/in/ily%C3%A8s-manai-a76649266/">
+                <img src="https://cdn.discordapp.com/attachments/1228548440473211022/1230290386472140810/IMG_2651.jpg?ex=6632c835&is=66205335&hm=0f29298b97cb65b8d6143fe0b2a1f6110ff8552e715468ab2f39e6676879c461&" alt="Ilyès Manai" class="contact-image">
+            </a>
+            <a href="https://www.linkedin.com/in/ervin-goby-b52b25235/">
+                <img src="https://media.licdn.com/dms/image/D4E35AQHabs_X83QYCg/profile-framedphoto-shrink_800_800/0/1700214075352?e=1713747600&v=beta&t=BSABGvLFSbSzLhhIelS1e3CJbqk16fH9e9t3fVKwS7o" alt="Ervin Goby" class="contact-image">
+            </a>
+        </div>
+        <form id="contact-form" method="post" action="/contact">
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Envoyer</button>
+        </form>
+        <div id="successMessage" class="success-message">
+            Votre message a été envoyé avec succès !
+            L'équipe de développement vous répondra prochainement 
+        </div>
+    </main>
+    <script>
+    
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+           
+            document.getElementById('successMessage').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 3000);
+        });
+    </script>
+    
+</body>
+</html>

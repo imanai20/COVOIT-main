@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commander un trajet</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    select, input[type="text"], input[type="number"], button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #successMessage {
+        display: none;
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <a href="accueil"><img src="https://cdn.discordapp.com/attachments/1027921511945871371/1230316388833562664/ECO-removebg-preview.png?ex=6632e06d&is=66206b6d&hm=90a5f9863123801815bef8f04c9b120bfccca349cccd6d934395d1bec3e4cb0d&" alt="Logo" height="100" width="100"></a>
+    <h1>Enregistrer un trajet</h1>
+
+    <form id="commandForm" action="/commander" method="POST">
+        <label for="trajet">Trajet :</label>
+        <select id="trajet" name="trajet" required>
+            <option value="Tours <> Paris">Tours <-> Paris</option>
+            <option value="Tours <-> Marseille">Tours <-> Marseille</option>
+            <option value="Tours <-> Lyon">Tours <-> Lyon</option>
+            <option value="Tours <-> Toulouse">Tours <-> Toulouse</option>
+            <option value="Tours <-> Bordeaux">Tours <-> Bordeaux</option>
+            <option value="Paris <-> Marseille">Paris <-> Marseille</option>
+            <option value="Paris <-> Lyon">Paris <-> Lyon</option>
+            <option value="Paris <-> Toulouse">Paris <-> Toulouse</option>
+            <option value="Paris <-> Bordeaux">Paris <-> Bordeaux</option>
+            <option value="Marseille <-> Lyon">Marseille <-> Lyon</option>
+            <option value="Marseille <-> Toulouse">Marseille <-> Toulouse</option>
+            <option value="Marseille <-> Bordeaux">Marseille <-> Bordeaux</option>
+            <option value="Lyon <-> Toulouse">Lyon <-> Toulouse</option>
+            <option value="Lyon <-> Bordeaux">Lyon <-> Bordeaux</option>
+            <option value="Toulouse <-> Bordeaux">Toulouse <-> Bordeaux</option>
+        </select>
+
+        <label for="prix">Prix :</label>
+        <input type="text" id="prix" name="prix" required>
+
+        <label for="conducteur">Conducteur :</label>
+        <input type="text" id="conducteur" name="conducteur" required>
+
+        <label for="Nombre_passager">Nombre de passagers :</label>
+        <input type="number" id="Nombre_passager" name="Nombre_passager" required>
+
+        <button type="submit">Commander</button>
+    </form>
+
+    <div id="successMessage">
+        Nouvelle commande enregistrée
+    </div>
+
+    <h2>Historique des commandes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Actions</th>
+                <th>Trajet</th>
+                <th>Prix</th>
+                <th>Conducteur</th>
+                <th>Nombre de passagers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% commander.forEach((commande) => { %>
+                <tr>
+                    <td>
+                        <form id="modifyForm_<%= commande._id %>" action="/modifier-commande/<%= commande._id %>" method="POST" style="display: none;">
+                            <label for="trajet_<%= commande._id %>">Trajet :</label>
+                            <select id="trajet_<%= commande._id %>" name="trajet" required>
+                                <option value="Tours <> Paris">Tours <-> Paris</option>
+            <option value="Tours <-> Marseille">Tours <-> Marseille</option>
+            <option value="Tours <-> Lyon">Tours <-> Lyon</option>
+            <option value="Tours <-> Toulouse">Tours <-> Toulouse</option>
+            <option value="Tours <-> Bordeaux">Tours <-> Bordeaux</option>
+            <option value="Paris <-> Marseille">Paris <-> Marseille</option>
+            <option value="Paris <-> Lyon">Paris <-> Lyon</option>
+            <option value="Paris <-> Toulouse">Paris <-> Toulouse</option>
+            <option value="Paris <-> Bordeaux">Paris <-> Bordeaux</option>
+            <option value="Marseille <-> Lyon">Marseille <-> Lyon</option>
+            <option value="Marseille <-> Toulouse">Marseille <-> Toulouse</option>
+            <option value="Marseille <-> Bordeaux">Marseille <-> Bordeaux</option>
+            <option value="Lyon <-> Toulouse">Lyon <-> Toulouse</option>
+            <option value="Lyon <-> Bordeaux">Lyon <-> Bordeaux</option>
+            <option value="Toulouse <-> Bordeaux">Toulouse <-> Bordeaux</option>
+                            </select>
+
+                            <label for="prix_<%= commande._id %>">Prix :</label>
+                            <input type="text" id="prix_<%= commande._id %>" name="prix" required>
+
+                            <label for="conducteur_<%= commande._id %>">Conducteur :</label>
+                            <input type="text" id="conducteur_<%= commande._id %>" name="conducteur" required>
+
+                            <label for="Nombre_passager_<%= commande._id %>">Nombre de passagers :</label>
+                            <input type="number" id="Nombre_passager_<%= commande._id %>" name="Nombre_passager" required>
+
+                            <button type="submit">Valider</button>
+                        </form>
+                    </td>
+                    <td>
+                        <button onclick="showModifyForm('<%= commande._id %>')">Modifier</button>
+                    </td>
+                    <td>
+                        <a href="/payment"><button>Payer</button></a>
+                    </td>
+                    <td><%= commande.trajet %></td>
+                    <td><%= commande.prix %></td>
+                    <td><%= commande.conducteur %></td>
+                    <td><%= commande.Nombre_passager %></td>
+                    <td>
+                        <form action="/supprimer-commande/<%= commande._id %>" method="POST">
+                            <button type="submit">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function showModifyForm(commandeId) {
+        // Masque tous les formulaires de modification
+        document.querySelectorAll('form[id^="modifyForm_"]').forEach(form => {
+            form.style.display = 'none';
+        });
+
+        // Affiche le formulaire de modification correspondant à la commande sélectionnée
+        document.getElementById('modifyForm_' + commandeId).style.display = 'block';
+
+        // Remplis les champs du formulaire avec les détails de la commande sélectionnée
+        const selectedCommande = commander.find(commande => commande._id === commandeId);
+        document.getElementById('trajet_' + commandeId).value = selectedCommande.trajet;
+        document.getElementById('prix_' + commandeId).value = selectedCommande.prix;
+        document.getElementById('conducteur_' + commandeId).value = selectedCommande.conducteur;
+        document.getElementById('Nombre_passager_' + commandeId).value = selectedCommande.Nombre_passager;
+    }
+</script>
+
+</body>
+</html>

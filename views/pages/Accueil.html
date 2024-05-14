@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    p {
+        text-align: center;
+        color: #666;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        border-radius: 10px;
+        width: 150px; /* Ajustez la taille des images selon vos besoins */
+        height: auto;
+    }
+
+    .buttons-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .buttons-container a {
+        margin: 10px;
+        text-decoration: none;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .carousel-container {
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden; /* Pour cacher les images qui dépassent */
+    }
+
+    .carousel {
+        white-space: nowrap; /* Pour que les images restent en ligne */
+        animation: scroll 10s linear infinite; /* Animation de défilement */
+    }
+
+    .carousel img {
+        display: inline-block;
+        width: 150px; /* Augmentez la largeur des images selon vos besoins */
+        height: auto;
+        margin: 10px; /* Espacement entre les images */
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-150px * 6)); /* Largeur de chaque image * nombre total d'images */
+        }
+    }
+
+    /* Pour la vidéo */
+    .video-container {
+        text-align: center;
+        border-radius: 10px; /* Ajout du bord arrondi */
+        overflow: hidden; /* Cacher tout contenu débordant */
+    }
+    iframe {
+        width: 100%;
+        max-width: 800px;
+        height: 400px;
+        border: none; /* Supprimer la bordure de l'iframe */
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <a href="accueil"><img src="https://cdn.discordapp.com/attachments/1027921511945871371/1230316388833562664/ECO-removebg-preview.png?ex=6632e06d&is=66206b6d&hm=90a5f9863123801815bef8f04c9b120bfccca349cccd6d934395d1bec3e4cb0d&" height="100" width="100"></a>
+    <h1 id="welcome-message">Bienvenue dans votre espace</h1>
+    <div class="buttons-container">
+        <a href="/commander"><button>Commander</button></a>
+        <a href="/maps"><button>Maps</button></a>
+        <a href="/historique"><button>Historique des trajets</button></a>
+        <a href="/reglement"><button>Règlement</button></a>
+        <a href="/contact"><button>Contact</button></a>
+    </div>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1QpK9Ih4uz0?autoplay=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <h1>Actualités</h1>
+    <div class="carousel-container">
+        <div class="carousel">
+            <a href="https://www.lavoixdunord.fr/tags/accident-de-la-route"><img src="https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_961w/2024/03/12/node_1439727/57910402/public/2024/03/12/B9736018443Z.1_20240312154422_000%2BGO3ODORE0.1-0.jpeg.jpg?itok=Q5ETUeB91710318068" alt="Actualité 1"></a>
+            <a href="https://www.lavoixdunord.fr/1432153/article/2024-02-19/carambolage-cinq-blesses-sur-la-route-vers-la-cite-europe"><img src="https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_300w/2024/02/19/node_1432153/57696374/public/2024/02/19/B9735937084Z.1_20240219155657_000%2BGSDO9VVL5.3-0.jpeg.jpg?itok=4PhCFtYf1708354624" alt="Actualité 2"></a>
+            <a href="https://www.lavoixdunord.fr/1447883/article/2024-04-03/givenchy-en-gohelle-gros-deploiement-de-secours-apres-la-decouverte-d-obus"><img src="https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_864w/2024/04/03/node_1447883/58220895/public/2024/04/03/15234495.jpeg?itok=J1yVpafb1712176361" alt="Actualité 3"></a>
+            <a href="https://www.lavoixdunord.fr/tags/accident-de-la-route"><img src="https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_961w/2024/03/12/node_1439727/57910402/public/2024/03/12/B9736018443Z.1_20240312154422_000%2BGO3ODORE0.1-0.jpeg.jpg?itok=Q5ETUeB91710318068" alt="Actualité 4"></a>
+            <a href="https://www.lavoixdunord.fr/tags/accident-de-la-route"><img src="https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_961w/2024/03/12/node_1439727/57910402/public/2024/03/12/B9736018443Z.1_20240312154422_000%2BGO3ODORE0.1-0.jpeg.jpg?itok=Q5ETUeB91710318068" alt="Actualité 5"></a>
+            <a href="https://www.lavoixdunord.fr/tags/accident-de-la-route"><img src="https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_961w/2024/03/12/node_1439727/57910402/public/2024/03/12/B9736018443Z.1_20240312154422_000%2BGO3ODORE0.1-0.jpeg.jpg?itok=Q5ETUeB91710318068" alt="Actualité 6"></a>
+            <a href="https://www.lavoixdunord.fr/tags/accident-de-la-route"><img src="https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_961w/2024/03/12/node_1439727/57910402/public/2024/03/12/B9736018443Z.1_20240312154422_000%2BGO3ODORE0.1-0.jpeg.jpg?itok=Q5ETUeB91710318068" alt="Actualité 7"></a>
+            <a href="https://www.lavoixdunord.fr/tags/accident-de-la-route"><img src="https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_961w/2024/03/12/node_1439727/57910402/public/2024/03/12/B9736018443Z.1_20240312154422_000%2BGO3ODORE0.1-0.jpeg.jpg?itok=Q5ETUeB91710318068" alt="Actualité 8"></a>
+            <a href="https://www.lavoixdunord.fr/tags/accident-de-la-route"><img src="https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_961w/2024/03/12/node_1439727/57910402/public/2024/03/12/B9736018443Z.1_20240312154422_000%2BGO3ODORE0.1-0.jpeg.jpg?itok=Q5ETUeB91710318068" alt="Actualité 9"></a>
+            <a href="https://www.lavoixdunord.fr/tags/accident-de-la-route"><img src="https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/vdn_961w/2024/03/12/node_1439727/57910402/public/2024/03/12/B9736018443Z.1_20240312154422_000%2BGO3ODORE0.1-0.jpeg.jpg?itok=Q5ETUeB91710318068" alt="Actualité 10"></a>
+
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique des trajets</title>
+    <style>
+        /* Styles CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            text-align: left;
+        }
+        
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <a href="accueil"><img src="https://cdn.discordapp.com/attachments/1027921511945871371/1230316388833562664/ECO-removebg-preview.png?ex=6632e06d&is=66206b6d&hm=90a5f9863123801815bef8f04c9b120bfccca349cccd6d934395d1bec3e4cb0d&" alt="Logo" height="100" width="100"></a>
+    <h1>Historique des trajets</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom du passager</th>
+                <th>Conducteur</th>
+                <th>Prix</th>
+                <th>Destination</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% historique.forEach(trajet => { %>
+                <tr>
+                    <td><%= trajet.nom_du_passager %></td>
+                    <td><%= trajet.Conducteur %></td>
+                    <td><%= trajet.Prix %></td>
+                    <td><%= trajet.Destination %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
